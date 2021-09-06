@@ -4,7 +4,7 @@
 
 ### k3s node installation
 
-See [k3s bootstrapping](https://github.com/billimek/homelab-infrastructure/tree/master/k3s) for details on creating the k3s cluster itself
+See [k3s bootstrapping](https://github.com/dsyorkd/homelab-infrastructure/tree/master/k3s) for details on creating the k3s cluster itself
 
 Once a cluster is in-place, ensure that the `$KUBECONFIG` environment variable is set properly, or the target cluster is set in the `~/.kube/config` file.
 
@@ -18,14 +18,14 @@ This [script](bootstrap-cluster.sh) does several things:
 1. Bootstraps the vault-secret-operator with the auto-unwrap token
 1. Bootstraps cert-manager with letsencrypt information
 1. Bootstraps vault (see [bootstrap-vault.sh](bootstrap-vault.sh) for more detail)
-   * Initializes vault if it has not already been initialized
-   * Unseals vault
-   * Configures vault to accept requests from vault-secrets-operator
-   * Writes all secrets (held locally in the `.env` file) to vault for vault-secrets-operator to act on
+   - Initializes vault if it has not already been initialized
+   - Unseals vault
+   - Configures vault to accept requests from vault-secrets-operator
+   - Writes all secrets (held locally in the `.env` file) to vault for vault-secrets-operator to act on
 
 ## cluster maintenance
 
-After initial bootstrapping, it will be necessary to run scripts to apply manual changes that can't be natively handled via Flux.  This is for yaml files that need `envsubst` prior to application to the cluster.  This is also for updates to values stored in **vault**.
+After initial bootstrapping, it will be necessary to run scripts to apply manual changes that can't be natively handled via Flux. This is for yaml files that need `envsubst` prior to application to the cluster. This is also for updates to values stored in **vault**.
 
 ### `.env` file
 
@@ -51,4 +51,4 @@ To apply new additions or updates to vault, run [bootstrap-vault.sh](bootstrap-v
 
 ### backup & restore
 
-`velero` is used as the backup mechanism.  However, as an alternative for situations where it is, unfortunately, necessary to backup & restore a persistent volume (e.g. completely removing a chart that leverages a persistent volume), the [`backup.sh`](backup.sh) and [`restore.sh`](restore.sh) scripts may be used.  Examine to scripts to learn more.
+`velero` is used as the backup mechanism. However, as an alternative for situations where it is, unfortunately, necessary to backup & restore a persistent volume (e.g. completely removing a chart that leverages a persistent volume), the [`backup.sh`](backup.sh) and [`restore.sh`](restore.sh) scripts may be used. Examine to scripts to learn more.

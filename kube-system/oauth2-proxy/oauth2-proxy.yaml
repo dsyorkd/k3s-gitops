@@ -29,19 +29,19 @@ spec:
       # annotations:
       #   kubernetes.io/ingress.class: nginx
       path: /oauth2
-      hosts: [auth.eviljungle.com]
+      hosts: [auth.york.haus]
       tls:
-      - hosts:
-        - auth.eviljungle.com
+        - hosts:
+            - auth.york.haus
     extraArgs:
       provider: oidc
-      oidc-issuer-url: https://billimek.auth0.com/
+      oidc-issuer-url: https://dsyorkd.auth0.com/
       skip-provider-button:
       pass-authorization-header:
       email-domain: "*"
-      cookie-domain: .eviljungle.com
-      whitelist-domain: .eviljungle.com
+      cookie-domain: .york.haus
+      whitelist-domain: .york.haus
   valuesFrom:
-  - kind: Secret
-    name: "oauth2-proxy-helm-values"
-    optional: false
+    - kind: Secret
+      name: "oauth2-proxy-helm-values"
+      optional: false

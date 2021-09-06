@@ -1,4 +1,4 @@
-adminUser: jeff@billimek.com
+adminUser: syork@yorkserv.com
 adminPassword: "$GRAFANA_PASSWORD"
 env:
   TESLAMATE_DB_PASSWORD: "$TESLAMATE_DB_PASSWORD"
@@ -12,6 +12,6 @@ grafana.ini:
     client_id: $AUTH0_GRAFANA_CLIENT_ID
     client_secret: $AUTH0_GRAFANA_CLIENT_SECRET
     scopes: openid profile email
-    auth_url: https://billimek.auth0.com/authorize
-    token_url: https://billimek.auth0.com/oauth/token
-    api_url: https://billimek.auth0.com/userinfo
+    auth_url: https://syork.auth0.com/authorize
+    token_url: https://syork.auth0.com/oauth/token
+    api_url: https://syork.auth0.com/userinfo

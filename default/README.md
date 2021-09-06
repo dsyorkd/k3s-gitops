@@ -4,7 +4,7 @@
 
 Installs [blocky](https://github.com/0xERR0R/blocky): DNS proxy as ad-blocker for local network
 
-* [blocky.yaml](blocky/blocky.yaml)
+- [blocky.yaml](blocky/blocky.yaml)
 
 # emqx
 
@@ -12,14 +12,15 @@ Installs [blocky](https://github.com/0xERR0R/blocky): DNS proxy as ad-blocker fo
 
 [emqx](github.com/emqx/emqx) is a clustered MQTT broker
 
-* [emqx.yaml](emqx/emqx.yaml)
+- [emqx.yaml](emqx/emqx.yaml)
+
 # flood (with rtorrent sidecar)
 
 ![](https://i.imgur.com/ZtMrsbm.png)
 
 torrent client
 
-* [flood.yaml](flood/flood.yaml)
+- [flood.yaml](flood/flood.yaml)
 
 # frigate
 
@@ -27,7 +28,7 @@ torrent client
 
 Installs [frigate](https://github.com/blakeblackshear/frigate/): Realtime object detection on RTSP cameras with the Google Coral
 
-* [frigate.yaml](frigate/frigate.yaml)
+- [frigate.yaml](frigate/frigate.yaml)
 
 # goldilocks
 
@@ -35,7 +36,7 @@ Installs [frigate](https://github.com/blakeblackshear/frigate/): Realtime object
 
 Installs [goldilocks](https://github.com/FairwindsOps/goldilocks): to help with resource allocation selection
 
-* [goldilocks.yaml](goldilocks/goldilocks.yaml)
+- [goldilocks.yaml](goldilocks/goldilocks.yaml)
 
 # home-assistant
 
@@ -43,8 +44,8 @@ Installs [goldilocks](https://github.com/FairwindsOps/goldilocks): to help with 
 
 ![](https://i.imgur.com/04TtJFw.png)
 
-* [home-assistant.yaml](home-assistant/home-assistant.yaml)
-* Home Assistant configuration & settings are persisted to a [configuration repo](https://github.com/billimek/home-assistant-config)
+- [home-assistant.yaml](home-assistant/home-assistant.yaml)
+- Home Assistant configuration & settings are persisted to a [configuration repo](https://github.com/dsyorkd/home-assistant-config)
 
 # minecraft
 
@@ -52,9 +53,9 @@ Using the [minecraft server](https://hub.docker.com/r/itzg/minecraft-server) con
 
 ![](https://i.imgur.com/zBha0RP.png)
 
-* [minecraft-creative.yaml](minecraft/minecraft-creative.yaml)
-* [minecraft-survival.yaml](minecraft/minecraft-survival.yaml)
-* [minecraft-bedrock.yaml](minecraft/minecraft-bedrock.yaml)
+- [minecraft-creative.yaml](minecraft/minecraft-creative.yaml)
+- [minecraft-survival.yaml](minecraft/minecraft-survival.yaml)
+- [minecraft-bedrock.yaml](minecraft/minecraft-bedrock.yaml)
 
 # minio
 
@@ -64,13 +65,13 @@ Using the [minecraft server](https://hub.docker.com/r/itzg/minecraft-server) con
 
 S3-compatible bucket storage service
 
-* [minio.yaml](minio/minio.yaml)
+- [minio.yaml](minio/minio.yaml)
 
 # monica
 
 [Monica](https://github.com/monicahq/monica) is an opensource Source personal CRM.
 
-* [monica.yaml](monica/monica.yaml)
+- [monica.yaml](monica/monica.yaml)
 
 # node-red
 
@@ -78,8 +79,8 @@ S3-compatible bucket storage service
 
 Rules-engine for automations
 
-* [node-red.yaml](node-red/node-red.yaml)
-* Node-Red configuration is persisted to a [configuration repo](https://github.com/billimek/node-red-config)
+- [node-red.yaml](node-red/node-red.yaml)
+- Node-Red configuration is persisted to a [configuration repo](https://github.com/dsyorkd/node-red-config)
 
 # nzbget
 
@@ -87,7 +88,7 @@ Rules-engine for automations
 
 [Nzbget](https://github.com/nzbget/nzbget) is an efficient usenet downloading client.
 
-* [nzbget.yaml](nzbget/nzbget.yaml)
+- [nzbget.yaml](nzbget/nzbget.yaml)
 
 # plex
 
@@ -95,7 +96,7 @@ Rules-engine for automations
 
 [Plex](https://www.plex.tv/) is a home media solution.
 
-* [plex.yaml](plex/plex.yaml)
+- [plex.yaml](plex/plex.yaml)
 
 # radarr
 
@@ -103,7 +104,7 @@ Rules-engine for automations
 
 [Radarr](https://github.com/Radarr/Radarr) is a movie downloader
 
-* [radarr.yaml](radarr/radarr.yaml)
+- [radarr.yaml](radarr/radarr.yaml)
 
 # readarr
 
@@ -111,13 +112,13 @@ Rules-engine for automations
 
 [Readarr](https://github.com/Readarr/Readarr) is an ebook/audiobook organizer
 
-* [readarr.yaml](readarr/readarr.yaml)
+- [readarr.yaml](readarr/readarr.yaml)
 
 # ser2sock
 
-[ser2sock](https://github.com/nutechsoftware/ser2sock) is a serial to socket redirector.  This is used to bridge a home alarm panel to home-assistant for home automation.
+[ser2sock](https://github.com/nutechsoftware/ser2sock) is a serial to socket redirector. This is used to bridge a home alarm panel to home-assistant for home automation.
 
-* [ser2sock.yaml](ser2sock/ser2sock.yaml)
+- [ser2sock.yaml](ser2sock/ser2sock.yaml)
 
 # sonarr
 
@@ -125,7 +126,7 @@ Rules-engine for automations
 
 [Sonarr](https://github.com/Sonarr/Sonarr) is a tv show downloader
 
-* [sonarr.yaml](sonarr/sonarr.yaml)
+- [sonarr.yaml](sonarr/sonarr.yaml)
 
 # tesla_dashcam
 
@@ -133,7 +134,7 @@ Rules-engine for automations
 
 [tesla_dashcam](https://github.com/ehendrix23/tesla_dashcam) is a kubernetes cron job that runs nightly to combine multiple different dashcam videos into a single multi-pane video from the car cameras.
 
-* [tesla_dashcam.yaml](tesla_dashcam/tesla_dashcam.yaml)
+- [tesla_dashcam.yaml](tesla_dashcam/tesla_dashcam.yaml)
 
 # teslamate
 
@@ -142,7 +143,7 @@ Rules-engine for automations
 
 [teslamate](https://github.com/adriankumpf/teslamate) is a tool and collection of grafana dashboards which collect metrics and observability data about your tesla vehicle.
 
-* [teslamate.yaml](teslamate/teslamate.yaml)
+- [teslamate.yaml](teslamate/teslamate.yaml)
 
 # unifi
 
@@ -150,7 +151,7 @@ Rules-engine for automations
 
 [ubiquiti unifi controller](https://github.com/jacobalberty/unifi-docker) for wireless access points and home networking
 
-* [unifi.yaml](unifi/unifi.yaml)
+- [unifi.yaml](unifi/unifi.yaml)
 
 # valheim
 
@@ -158,8 +159,7 @@ Rules-engine for automations
 
 [Valheim](https://github.com/lloesche/valheim-server-docker) game server
 
-* [valheim.yaml](valheim/valheim.yaml)
-
+- [valheim.yaml](valheim/valheim.yaml)
 
 # zwavejs2mqtt
 
@@ -167,4 +167,4 @@ Rules-engine for automations
 
 [zwavejs2mqtt](https://github.com/zwave-js/zwavejs2mqtt) for controlling z-wave devices from a connected zwave controller and publishing over MQTT or websocket
 
-* [zwavejs2mqtt.yaml](zwavejs2mqtt/zwavejs2mqtt.yaml)
+- [zwavejs2mqtt.yaml](zwavejs2mqtt/zwavejs2mqtt.yaml)

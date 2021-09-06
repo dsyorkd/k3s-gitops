@@ -24,16 +24,16 @@ spec:
     configuration:
       startTime: "0:00"
       endTime: "4:00"
-      timeZone: "America/New_York"
+      timeZone: "America/Chicago"
       rebootCommand: "/usr/bin/systemctl reboot"
     tolerations:
-    - key: "arm"
-      operator: "Exists"
-    - key: "node-role.kubernetes.io/master"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
     metrics:
       create: true
   valuesFrom:
-  - kind: Secret
-    name: "kured-helm-values"
-    optional: false
+    - kind: Secret
+      name: "kured-helm-values"
+      optional: false

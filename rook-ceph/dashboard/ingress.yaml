@@ -12,16 +12,16 @@ metadata:
 #      proxy_ssl_verify off;
 spec:
   tls:
-   - hosts:
-     - rook.eviljungle.com
+    - hosts:
+        - rook.york.haus
   rules:
-  - host: rook.eviljungle.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: rook-ceph-mgr-dashboard
-            port:
-              number: 7000
+    - host: rook.york.haus
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: rook-ceph-mgr-dashboard
+                port:
+                  number: 7000

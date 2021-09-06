@@ -32,54 +32,53 @@ spec:
     affinity:
       podAntiAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app.kubernetes.io/name
-              operator: In
-              values:
-              - coredns
-          topologyKey: "kubernetes.io/hostname"
+          - labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                    - coredns
+            topologyKey: "kubernetes.io/hostname"
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     rbac:
       create: true
     isClusterService: false
     servers:
-    - zones:
-      - zone: eviljungle.com.
-        scheme: dns://
-        use_tcp: false
-      port: 53
-      plugins:
-      - name: errors
-      - name: health
-        configBlock: |-
-          lameduck 5s
-      - name: ready
-      # - name: kubernetes
-      #   parameters: cluster.local in-addr.arpa ip6.arpa
-      #   configBlock: |-
-      #     pods insecure
-      #     fallthrough in-addr.arpa ip6.arpa
-      #     ttl 30
-      - name: prometheus
-        parameters: 0.0.0.0:9153
-      - name: forward
-        parameters: . /etc/resolv.conf
-      - name: cache
-        parameters: 30
-      - name: loop
-      - name: reload
-      - name: loadbalance
-      - name: file
-        parameters: /etc/coredns/eviljungle.com
+      - zones:
+          - zone: york.haus.
+            scheme: dns://
+            use_tcp: false
+        port: 53
+        plugins:
+          - name: errors
+          - name: health
+            configBlock: |-
+              lameduck 5s
+          - name: ready
+          # - name: kubernetes
+          #   parameters: cluster.local in-addr.arpa ip6.arpa
+          #   configBlock: |-
+          #     pods insecure
+          #     fallthrough in-addr.arpa ip6.arpa
+          #     ttl 30
+          - name: prometheus
+            parameters: 0.0.0.0:9153
+          - name: forward
+            parameters: . /etc/resolv.conf
+          - name: cache
+            parameters: 30
+          - name: loop
+          - name: reload
+          - name: loadbalance
+          - name: file
+            parameters: /etc/coredns/york.haus
     zoneFiles:
-     - filename: eviljungle.com
-       domain: eviljungle.com
-       contents: |
-         eviljungle.com.   IN SOA etta.ns.cloudflare.com. dns.cloudflare.com. 2020100600 10000 2400 604800 3600
-         mc.eviljungle.com. IN A   10.0.6.106
-         valheim.eviljungle.com. IN A 10.0.6.58
-         *.eviljungle.com. IN A   10.0.6.150
-         eviljungle.com. IN A   10.0.7.1
+      - filename: york.haus
+        domain: york.haus
+        contents: |
+          york.haus.   IN SOA etta.ns.cloudflare.com. dns.cloudflare.com. 2020100600 10000 2400 604800 3600
+          k3s.york.haus. IN A 172.29.236.199
+          *.york.haus. IN A   172.29.237.0
+          york.haus. IN A   172.29.237.0

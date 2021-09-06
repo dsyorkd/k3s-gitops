@@ -21,20 +21,20 @@ spec:
       repository: ghcr.io/k8s-at-home/radarr
       tag: v3.2.2.5080
     env:
-      TZ: "America/New_York"
+      TZ: "America/Chicago"
     ingress:
       main:
         enabled: true
         annotations:
-          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/ingress.class: "ambassador"
         hosts:
-        - host: radarr.eviljungle.com
-          paths:
-          - path: /
-            pathType: Prefix
+          - host: radarr.york.haus
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
-        - hosts:
-          - "radarr.eviljungle.com"
+          - hosts:
+              - "radarr.york.haus"
     podAnnotations:
       backup.velero.io/backup-volumes: config
     persistence:
@@ -56,8 +56,8 @@ spec:
       limits:
         memory: 500Mi
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     prometheus:
       podMonitor:
         enabled: true

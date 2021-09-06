@@ -1,4 +1,3 @@
-
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -34,19 +33,19 @@ spec:
           region: us-east-1
           s3ForcePathStyle: true
           s3Url: http://truenas.home:9000
-          publicUrl: https://minio.eviljungle.com
+          publicUrl: https://minio.york.haus
       volumeSnapshotLocation:
         name: aws
         config:
           region: us-east-1
       resticTimeout: 6h
     initContainers:
-    - name: velero-plugin-for-aws
-      image: velero/velero-plugin-for-aws:v1.2.1
-      imagePullPolicy: IfNotPresent
-      volumeMounts:
-      - mountPath: /target
-        name: plugins
+      - name: velero-plugin-for-aws
+        image: velero/velero-plugin-for-aws:v1.2.1
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /target
+            name: plugins
     resources:
       requests:
         memory: 300Mi
@@ -68,10 +67,10 @@ spec:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
       tolerations:
-      - key: "arm"
-        operator: "Exists"
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
+        - key: "arm"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
       resources:
         requests:
           memory: 200Mi
@@ -91,7 +90,7 @@ spec:
               app: mcbr-minecraft-bedrock
           ttl: "120h"
           includedNamespaces:
-          - default
+            - default
       mcsv-minecraft-hourly:
         schedule: "0 * * * *"
         template:
@@ -100,7 +99,7 @@ spec:
               app: mcsv-minecraft
           ttl: "120h"
           includedNamespaces:
-          - default
+            - default
       mc-minecraft-hourly:
         schedule: "0 */6 * * *"
         template:
@@ -109,8 +108,8 @@ spec:
               app: mc-minecraft
           ttl: "120h"
           includedNamespaces:
-          - default
+            - default
   valuesFrom:
-  - kind: Secret
-    name: "velero-helm-values"
-    optional: false
+    - kind: Secret
+      name: "velero-helm-values"
+      optional: false

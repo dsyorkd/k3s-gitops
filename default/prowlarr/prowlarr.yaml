@@ -21,20 +21,20 @@ spec:
       repository: ghcr.io/k8s-at-home/prowlarr
       tag: v0.1.1.919
     env:
-      TZ: "America/New_York"
+      TZ: "America/Chicago"
     ingress:
       main:
         enabled: true
         annotations:
-          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/ingress.class: "ambassador"
         hosts:
-          - host: "prowlarr.eviljungle.com"
+          - host: "prowlarr.york.haus"
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
-              - "prowlarr.eviljungle.com"
+              - "prowlarr.york.haus"
     persistence:
       config:
         enabled: true
@@ -56,8 +56,8 @@ spec:
     podAnnotations:
       backup.velero.io/backup-volumes: config
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     prometheus:
       podMonitor:
         enabled: true

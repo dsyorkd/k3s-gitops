@@ -18,15 +18,15 @@ spec:
       interval: 5m
   values:
     image:
-      repository: billimek/prometheus-uptimerobot-exporter
+      repository: dsyorkd/prometheus-uptimerobot-exporter
       tag: 0.0.1
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     prometheus:
       serviceMonitor:
         enabled: true
   valuesFrom:
-  - kind: Secret
-    name: "uptimerobot-prometheus-helm-values"
-    optional: false
+    - kind: Secret
+      name: "uptimerobot-prometheus-helm-values"
+      optional: false

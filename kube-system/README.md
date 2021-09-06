@@ -1,20 +1,20 @@
 # coredns
 
-Using this specific [coredns](https://github.com/coredns/coredns) deployment to manage an internal DNS zone for support split-brain DNS for the home network (so that the same host will resolve properly for clients on the internal network as well as the external network).  [This issue](https://github.com/billimek/k8s-gitops/issues/153) explored the problem and landed on this solution.
+Using this specific [coredns](https://github.com/coredns/coredns) deployment to manage an internal DNS zone for support split-brain DNS for the home network (so that the same host will resolve properly for clients on the internal network as well as the external network). [This issue](https://github.com/dsyorkd/k8s-gitops/issues/153) explored the problem and landed on this solution.
 
-* [coredns/coredns.yaml](coredns/coredns.yaml)
+- [coredns/coredns.yaml](coredns/coredns.yaml)
 
 # descheduler
 
-Leveraging [descheduler](https://github.com/kubernetes-sigs/descheduler) to automatically evict pods that no longer satisfy their NodeAffinity constraints.  This is used to work in concert with `node-feature-discovery` such that when USB devices are moved from one node to a different node, the pods requiring the USB devices will be properly forced to reschedule to the new location
+Leveraging [descheduler](https://github.com/kubernetes-sigs/descheduler) to automatically evict pods that no longer satisfy their NodeAffinity constraints. This is used to work in concert with `node-feature-discovery` such that when USB devices are moved from one node to a different node, the pods requiring the USB devices will be properly forced to reschedule to the new location
 
-* [descheduler/descheduler.yaml](descheduler/descheduler.yaml)
+- [descheduler/descheduler.yaml](descheduler/descheduler.yaml)
 
 # Intel GPU Plugin
 
 Leverage Intel-based iGPU via the [gpu plugin](https://github.com/intel/intel-device-plugins-for-kubernetes/tree/master/cmd/gpu_plugin) DaemonSet for serving-up GPU-based workloads (e.g. Plex) via the `gpu.intel.com/i915` node resource
 
-* [intel-gpu_plugin/intel-gpu_plugin.yaml](intel-gpu_plugin/intel-gpu_plugin.yaml)
+- [intel-gpu_plugin/intel-gpu_plugin.yaml](intel-gpu_plugin/intel-gpu_plugin.yaml)
 
 # kured
 
@@ -22,26 +22,26 @@ Leverage Intel-based iGPU via the [gpu plugin](https://github.com/intel/intel-de
 
 Automatically drain and reboot nodes when a reboot is required (e.g. a kernel update was applied): https://github.com/weaveworks/kured
 
-* [kured/kured.yaml](kured/kured.yaml)
-* [kured/kured-helm-values.yaml](kured/kured-helm-values.yaml)
+- [kured/kured.yaml](kured/kured.yaml)
+- [kured/kured-helm-values.yaml](kured/kured-helm-values.yaml)
 
 # metallb
 
 [Run your own on-prem LoadBalancer](https://metallb.universe.tf/)
 
-* [metallb/metallb.yaml](metallb/metallb.yaml)
+- [metallb/metallb.yaml](metallb/metallb.yaml)
 
 # nfs-client-provisioner
 
 Using the [nfs-client storage type](https://github.com/kubernetes-incubator/external-storage/tree/master/nfs-client)
 
-* [nfs-client-provisioner/fs-client-provisioner.yaml](nfs-client-provisioner/nfs-client-provisioner.yaml)
+- [nfs-client-provisioner/fs-client-provisioner.yaml](nfs-client-provisioner/nfs-client-provisioner.yaml)
 
 # nfs-pv
 
 nfs-based persistent mounts for various pod access (media mount & data mount)
 
-* [nfs-pv/](nfs-pv/)
+- [nfs-pv/](nfs-pv/)
 
 # nginx
 
@@ -49,31 +49,31 @@ nfs-based persistent mounts for various pod access (media mount & data mount)
 
 [ingress-nginx](https://github.com/kubernetes/ingress-nginx) controller leveraging cert-manager as the central cert store for the wildcard certificate
 
-* [nginx/](nginx/)
+- [nginx/](nginx/)
 
 # node-feature-discovery
 
 Using the USB feature of [node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery) to dynamically label nodes that contain specific USB devices we care about
 
-* [node-feature-discovery](node-feature-discovery/)
+- [node-feature-discovery](node-feature-discovery/)
 
 # oauth2-proxy
 
 [OAuth2 authenticating proxy](https://github.com/pusher/oauth2_proxy) leveraging Auth0
 
-* [oauth2-proxy/](oauth2-proxy/)
+- [oauth2-proxy/](oauth2-proxy/)
 
 # registry-creds
 
-[registry-creds](https://github.com/alexellis/registry-creds): Automate Kubernetes registry credentials, to extend Docker Hub limits.  This is (sadly) necessary to have cluster-wide imagePulls use an authenticated Docker account so that the cluster doesn't get rate-limited and become unable to schedule workloads. This has already happened once.
+[registry-creds](https://github.com/alexellis/registry-creds): Automate Kubernetes registry credentials, to extend Docker Hub limits. This is (sadly) necessary to have cluster-wide imagePulls use an authenticated Docker account so that the cluster doesn't get rate-limited and become unable to schedule workloads. This has already happened once.
 
-* [registry-creds/](registry-creds)
+- [registry-creds/](registry-creds)
 
 # reloader
 
 [reloader](https://github.com/stakater/Reloader): A Kubernetes controller to watch changes in ConfigMap and Secrets and do rolling upgrades on Pods with their associated Deployment, StatefulSet, DaemonSet and DeploymentConfig
 
-* [reloader/](reloader/reloader.yaml)
+- [reloader/](reloader/reloader.yaml)
 
 # vault
 
@@ -81,19 +81,19 @@ Using the USB feature of [node-feature-discovery](https://github.com/kubernetes-
 
 ## Vault HA server
 
-* [vault/vault.yaml](vault/vault.yaml)
+- [vault/vault.yaml](vault/vault.yaml)
 
-See the [vault/vault.yaml](vault/vault.yaml) & [../setup/bootstrap-vault.sh](../setup/bootstrap-vault.sh) files for reference on how these are implemented in this cluster.  The server leverages the Google KMS keystore for automatic unseal as needed.  Further information about Google KMS for unsealing are [Vault GCPKMS Documentation](https://www.vaultproject.io/docs/configuration/seal/gcpckms.html), [Autounseal with GCP KMS](https://learn.hashicorp.com/vault/operations/autounseal-gcp-kms), & [Authenticating to Google Cloud Platform](https://cloud.google.com/kubernetes-engine/docs/tutorials/authenticating-to-cloud-platform) for passing service account json via a secret.
+See the [vault/vault.yaml](vault/vault.yaml) & [../setup/bootstrap-vault.sh](../setup/bootstrap-vault.sh) files for reference on how these are implemented in this cluster. The server leverages the Google KMS keystore for automatic unseal as needed. Further information about Google KMS for unsealing are [Vault GCPKMS Documentation](https://www.vaultproject.io/docs/configuration/seal/gcpckms.html), [Autounseal with GCP KMS](https://learn.hashicorp.com/vault/operations/autounseal-gcp-kms), & [Authenticating to Google Cloud Platform](https://cloud.google.com/kubernetes-engine/docs/tutorials/authenticating-to-cloud-platform) for passing service account json via a secret.
 
 # vault-secrets-operator
 
 [vault-secrets-operator](https://github.com/ricoberger/vault-secrets-operator)
 
-* [vault-secrets-operator/vault-secrets-operator.yaml](vault-secrets-operator/vault-secrets-operator.yaml)
+- [vault-secrets-operator/vault-secrets-operator.yaml](vault-secrets-operator/vault-secrets-operator.yaml)
 
 ## Setup
 
-The setup is automatically handled during cluster bootstrapping.  See [bootstrap-vault.sh](../setup/bootstrap-vault.sh) for more detail.
+The setup is automatically handled during cluster bootstrapping. See [bootstrap-vault.sh](../setup/bootstrap-vault.sh) for more detail.
 
 If configuring manually, follow the [vault-secrets-operator guide](https://github.com/ricoberger/vault-secrets-operator/blob/master/README.md) which is mostly the following:
 

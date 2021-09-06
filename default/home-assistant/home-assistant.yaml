@@ -21,7 +21,7 @@ spec:
       repository: homeassistant/home-assistant
       tag: 2021.9.3
     env:
-      TZ: "America/New_York"
+      TZ: "America/Chicago"
     hostNetwork: true
     dnsPolicy: ClusterFirstWithHostNet
     service:
@@ -32,15 +32,15 @@ spec:
       main:
         enabled: true
         annotations:
-          kubernetes.io/ingress.class: "nginx"
+          kubernetes.io/ingress.class: "ambassador"
         hosts:
-        - host: hass.eviljungle.com
-          paths:
-          - path: /
-            pathType: Prefix
+          - host: hass.york.haus
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
-        - hosts:
-          - "hass.eviljungle.com"
+          - hosts:
+              - "hass.york.haus"
     prometheus:
       serviceMonitor:
         enabled: false
@@ -74,23 +74,23 @@ spec:
         ingress:
           enabled: true
           annotations:
-            kubernetes.io/ingress.class: "nginx"
-            nginx.ingress.kubernetes.io/auth-url: "https://auth.eviljungle.com/oauth2/auth"
-            nginx.ingress.kubernetes.io/auth-signin: https://auth.eviljungle.com/oauth2/start
+            kubernetes.io/ingress.class: "ambassador"
+            nginx.ingress.kubernetes.io/auth-url: "https://auth.york.haus/oauth2/auth"
+            nginx.ingress.kubernetes.io/auth-signin: https://auth.york.haus/oauth2/start
           hosts:
-          - host: hass-vscode.eviljungle.com
-            paths:
-            - path: /
-              pathType: Prefix
+            - host: hass-vscode.york.haus
+              paths:
+                - path: /
+                  pathType: Prefix
           tls:
-          - hosts:
-            - hass-vscode.eviljungle.com
+            - hosts:
+                - hass-vscode.york.haus
         volumeMounts:
-        - name: config
-          mountPath: /config
+          - name: config
+            mountPath: /config
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     resources:
       limits:
         memory: 2500Mi
@@ -105,6 +105,6 @@ spec:
         enabled: true
         storageClass: "rook-ceph-block"
   valuesFrom:
-  - kind: Secret
-    name: "home-assistant-helm-values"
-    optional: false
+    - kind: Secret
+      name: "home-assistant-helm-values"
+      optional: false

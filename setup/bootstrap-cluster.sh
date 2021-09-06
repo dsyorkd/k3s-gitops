@@ -30,7 +30,7 @@ installFlux() {
     exit 1
   fi
   flux bootstrap github \
-    --owner=billimek \
+    --owner=dsyorkd \
     --repository=k8s-gitops \
     --branch master \
     --private=false \

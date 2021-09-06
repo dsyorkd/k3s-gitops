@@ -21,7 +21,7 @@ spec:
       repository: nodered/node-red
       tag: 2.0.6-12-minimal
     env:
-      TZ: "America/New_York"
+      TZ: "America/Chicago"
       FLOWS: "flows.json"
       NODE_RED_ENABLE_PROJECTS: "true"
       NODE_RED_ENABLE_SAFE_MODE: "false"
@@ -29,17 +29,17 @@ spec:
       main:
         enabled: true
         annotations:
-          kubernetes.io/ingress.class: "nginx"
-          nginx.ingress.kubernetes.io/auth-url: "https://auth.eviljungle.com/oauth2/auth"
-          nginx.ingress.kubernetes.io/auth-signin: https://auth.eviljungle.com/oauth2/start
+          kubernetes.io/ingress.class: "ambassador"
+          nginx.ingress.kubernetes.io/auth-url: "https://auth.york.haus/oauth2/auth"
+          nginx.ingress.kubernetes.io/auth-signin: https://auth.york.haus/oauth2/start
         hosts:
-        - host: node-red.eviljungle.com
-          paths:
-          - path: /
-            pathType: Prefix
+          - host: node-red.york.haus
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
-        - hosts:
-          - "node-red.eviljungle.com"
+          - hosts:
+              - "node-red.york.haus"
     persistence:
       data:
         enabled: true
@@ -50,8 +50,8 @@ spec:
     podAnnotations:
       backup.velero.io/backup-volumes: data
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     resources:
       requests:
         memory: 350Mi

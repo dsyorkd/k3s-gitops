@@ -32,9 +32,9 @@ installManualObjects(){
   kubectl -n kube-system create secret docker-registry registry-creds-secret --namespace kube-system --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_TOKEN --docker-email=$EMAIL
 
   ###################
-  # nginx
+  # ambassador
   ###################
-  # for i in "$REPO_ROOT"/kube-system/nginx/nginx-external/*.txt
+  # for i in "$REPO_ROOT"/kube-system/ambassador/ambassador-external/*.txt
   # do
   #   kapply "$i"
   # done

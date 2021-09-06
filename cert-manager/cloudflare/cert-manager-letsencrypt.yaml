@@ -4,19 +4,19 @@ metadata:
   name: letsencrypt-test
 spec:
   acme:
-    email: jeff@billimek.com
+    email: jeff@dsyorkd.com
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-test
     solvers:
-    # An empty 'selector' means that this solver matches all domains
-    - selector: {}
-      dns01:
-        cloudflare:
-          email: jeff@billimek.com
-          apiKeySecretRef:
-            name: cloudflare-api-key
-            key: api-key
+      # An empty 'selector' means that this solver matches all domains
+      - selector: {}
+        dns01:
+          cloudflare:
+            email: syork@yorkserv.com
+            apiKeySecretRef:
+              name: cloudflare-api-key
+              key: api-key
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -24,19 +24,19 @@ metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    email: jeff@billimek.com
+    email: syork@yorkserv.com
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-    # An empty 'selector' means that this solver matches all domains
-    - selector: {}
-      dns01:
-        cloudflare:
-          email: jeff@billimek.com
-          apiKeySecretRef:
-            name: cloudflare-api-key
-            key: api-key
+      # An empty 'selector' means that this solver matches all domains
+      - selector: {}
+        dns01:
+          cloudflare:
+            email: syork@yorkserv.com
+            apiKeySecretRef:
+              name: cloudflare-api-key
+              key: api-key
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -49,6 +49,6 @@ spec:
     name: letsencrypt-prod
     kind: ClusterIssuer
   dnsNames:
-  - eviljungle.com
-  - '*.eviljungle.com'
-  - '*.nd.eviljungle.com'
+    - york.haus
+    - "*.york.haus"
+    - "*.kube.york.haus"

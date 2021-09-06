@@ -54,8 +54,8 @@ spec:
                 requests:
                   storage: 10Gi
         tolerations:
-        - key: "arm"
-          operator: "Exists"
+          - key: "arm"
+            operator: "Exists"
         podMetadata:
           annotations:
             backup.velero.io/backup-volumes: alertmanager-kube-prometheus-stack-alertmanager-db
@@ -63,14 +63,14 @@ spec:
         enabled: true
         pathType: Prefix
         annotations:
-          kubernetes.io/ingress.class: "nginx"
-          nginx.ingress.kubernetes.io/auth-url: "https://auth.eviljungle.com/oauth2/auth"
-          nginx.ingress.kubernetes.io/auth-signin: https://auth.eviljungle.com/oauth2/start
+          kubernetes.io/ingress.class: "ambassador"
+          nginx.ingress.kubernetes.io/auth-url: "https://auth.york.haus/oauth2/auth"
+          nginx.ingress.kubernetes.io/auth-signin: https://auth.york.haus/oauth2/start
         hosts:
-        - prom-alert.eviljungle.com
+          - prom-alert.york.haus
         tls:
-        - hosts:
-          - prom-alert.eviljungle.com
+          - hosts:
+              - prom-alert.york.haus
       config:
         global:
           resolve_timeout: 5m
@@ -79,24 +79,24 @@ spec:
           # group_wait: 30s
           # group_interval: 5m
           # repeat_interval: 6h
-          receiver: 'slack-notifications'
+          receiver: "slack-notifications"
           # receiver: 'pagerduty'
           routes:
             - match:
                 alertname: Watchdog
-              receiver: 'null'
-            - receiver: 'pagerduty'
+              receiver: "null"
+            - receiver: "pagerduty"
               match:
                 severity: critical
               continue: true
-            - receiver: 'slack-notifications'
+            - receiver: "slack-notifications"
         inhibit_rules:
-        - source_match:
-            severity: 'critical'
-          target_match:
-            severity: 'warning'
-          # Apply inhibition if the alertname is the same.
-          equal: ['alertname', 'namespace']
+          - source_match:
+              severity: "critical"
+            target_match:
+              severity: "warning"
+            # Apply inhibition if the alertname is the same.
+            equal: ["alertname", "namespace"]
         templates: ["*.tmpl"]
       templateFiles:
         pagerduty-custom.tmpl: |-
@@ -104,9 +104,9 @@ spec:
     nodeExporter:
       serviceMonitor:
         relabelings:
-        - sourceLabels: [__meta_kubernetes_pod_node_name]
-          targetLabel: instance
-          action: replace
+          - sourceLabels: [__meta_kubernetes_pod_node_name]
+            targetLabel: instance
+            action: replace
     # kubelet:
     #   serviceMonitor:
     #     metricRelabelings:
@@ -130,25 +130,25 @@ spec:
       enabled: false
     prometheus-node-exporter:
       tolerations:
-      - key: "arm"
-        operator: "Exists"
-      - key: "armhf"
-        operator: "Exists"
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
+        - key: "arm"
+          operator: "Exists"
+        - key: "armhf"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"
     prometheus:
       ingress:
         enabled: true
         pathType: Prefix
         annotations:
-          kubernetes.io/ingress.class: "nginx"
-          nginx.ingress.kubernetes.io/auth-url: "https://auth.eviljungle.com/oauth2/auth"
-          nginx.ingress.kubernetes.io/auth-signin: https://auth.eviljungle.com/oauth2/start
+          kubernetes.io/ingress.class: "ambassador"
+          nginx.ingress.kubernetes.io/auth-url: "https://auth.york.haus/oauth2/auth"
+          nginx.ingress.kubernetes.io/auth-signin: https://auth.york.haus/oauth2/start
         hosts:
-        - prom-server.eviljungle.com
+          - prom-server.york.haus
         tls:
-        - hosts:
-          - prom-server.eviljungle.com
+          - hosts:
+              - prom-server.york.haus
       prometheusSpec:
         # image:
         #   repository: quay.io/prometheus/prometheus
@@ -189,16 +189,16 @@ spec:
         affinity:
           podAntiAffinity:
             requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - prometheus
-              topologyKey: "kubernetes.io/hostname"
+              - labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - prometheus
+                topologyKey: "kubernetes.io/hostname"
       thanosService:
         enabled: true
   valuesFrom:
-  - kind: Secret
-    name: "kube-prometheus-stack-helm-values"
-    optional: false
+    - kind: Secret
+      name: "kube-prometheus-stack-helm-values"
+      optional: false

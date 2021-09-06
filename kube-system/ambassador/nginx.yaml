@@ -38,28 +38,28 @@ spec:
         prometheusRule:
           enabled: false
       tolerations:
-      - key: "arm"
-        operator: "Exists"
+        - key: "arm"
+          operator: "Exists"
       extraArgs:
         default-ssl-certificate: "cert-manager/acme-crt-secret"
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app.kubernetes.io/name
-                operator: In
-                values:
-                - ingress-nginx
-              - key: app.kubernetes.io/instance
-                operator: In
-                values:
-                - ingress-nginx
-              - key: app.kubernetes.io/component
-                operator: In
-                values:
-                - controller
-            topologyKey: "kubernetes.io/hostname"
+            - labelSelector:
+                matchExpressions:
+                  - key: app.kubernetes.io/name
+                    operator: In
+                    values:
+                      - ingress-nginx
+                  - key: app.kubernetes.io/instance
+                    operator: In
+                    values:
+                      - ingress-nginx
+                  - key: app.kubernetes.io/component
+                    operator: In
+                    values:
+                      - controller
+              topologyKey: "kubernetes.io/hostname"
 
       resources:
         requests:
@@ -70,7 +70,7 @@ spec:
     defaultBackend:
       enabled: true
       image:
-        repository: billimek/custom-error-pages
+        repository: dsyorkd/custom-error-pages
         tag: 0.4.4
       resources:
         requests:

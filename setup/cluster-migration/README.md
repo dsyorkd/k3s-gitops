@@ -1,14 +1,14 @@
 **DEPRECATION:** This was used originally to help 'migrate' from an rke-provisioned cluster to the (now) k3s-provisioned cluster. Keeping it here for history.
 
-(for context see https://github.com/billimek/k8s-gitops/issues/54)
+(for context see https://github.com/dsyorkd/k8s-gitops/issues/54)
 
 ## pre-flight
 
 1. Pull-request a 'merge/replace' of the k8s-gitops repo with contents from the k3s-gitops repo
 1. update k3s-gitops to k8s-gitops pull request to:
-   * use 'real' domain name in the .env file
-   * 'real' metalLB loadbalancer IPs for nginx
-   * configure flux to point to k8s-gitops repo
+   - use 'real' domain name in the .env file
+   - 'real' metalLB loadbalancer IPs for ambassador
+   - configure flux to point to k8s-gitops repo
 
 ## cutover
 
