@@ -11,7 +11,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 172.29.244.10
-    path: "/media/Downloads"
+    path: "/downloads"
   mountOptions:
     - nfsvers=4
     - tcp

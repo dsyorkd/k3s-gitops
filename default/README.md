@@ -1,4 +1,6 @@
-# blocky
+# Default Services
+
+## blocky
 
 ![](https://i.imgur.com/EeoHuZa.png)
 
@@ -6,7 +8,7 @@ Installs [blocky](https://github.com/0xERR0R/blocky): DNS proxy as ad-blocker fo
 
 - [blocky.yaml](blocky/blocky.yaml)
 
-# emqx
+## emqx
 
 ![](https://i.imgur.com/uNxxBGX.png)
 
@@ -14,7 +16,7 @@ Installs [blocky](https://github.com/0xERR0R/blocky): DNS proxy as ad-blocker fo
 
 - [emqx.yaml](emqx/emqx.yaml)
 
-# flood (with rtorrent sidecar)
+## flood (with rtorrent sidecar)
 
 ![](https://i.imgur.com/ZtMrsbm.png)
 
@@ -22,7 +24,7 @@ torrent client
 
 - [flood.yaml](flood/flood.yaml)
 
-# frigate
+## frigate
 
 ![](https://i.imgur.com/hv7bh6m.png)
 
@@ -30,7 +32,7 @@ Installs [frigate](https://github.com/blakeblackshear/frigate/): Realtime object
 
 - [frigate.yaml](frigate/frigate.yaml)
 
-# goldilocks
+## goldilocks
 
 ![](https://i.imgur.com/500FwQp.png)
 
@@ -38,7 +40,7 @@ Installs [goldilocks](https://github.com/FairwindsOps/goldilocks): to help with 
 
 - [goldilocks.yaml](goldilocks/goldilocks.yaml)
 
-# home-assistant
+## home-assistant
 
 [Home-Assistant](https://github.com/home-assistant/core) is an opensource home automation solution.
 
@@ -47,7 +49,7 @@ Installs [goldilocks](https://github.com/FairwindsOps/goldilocks): to help with 
 - [home-assistant.yaml](home-assistant/home-assistant.yaml)
 - Home Assistant configuration & settings are persisted to a [configuration repo](https://github.com/dsyorkd/home-assistant-config)
 
-# minecraft
+## minecraft
 
 Using the [minecraft server](https://hub.docker.com/r/itzg/minecraft-server) container images to run multiple different minecraft servers.
 
@@ -57,7 +59,7 @@ Using the [minecraft server](https://hub.docker.com/r/itzg/minecraft-server) con
 - [minecraft-survival.yaml](minecraft/minecraft-survival.yaml)
 - [minecraft-bedrock.yaml](minecraft/minecraft-bedrock.yaml)
 
-# minio
+## minio
 
 [Minio](https://github.com/minio/minio) is a high performance S3-compatible kubernetes object storage solution.
 
@@ -67,13 +69,13 @@ S3-compatible bucket storage service
 
 - [minio.yaml](minio/minio.yaml)
 
-# monica
+## monica
 
 [Monica](https://github.com/monicahq/monica) is an opensource Source personal CRM.
 
 - [monica.yaml](monica/monica.yaml)
 
-# node-red
+## node-red
 
 ![](https://i.imgur.com/ABTbYw1.png)
 
@@ -82,7 +84,7 @@ Rules-engine for automations
 - [node-red.yaml](node-red/node-red.yaml)
 - Node-Red configuration is persisted to a [configuration repo](https://github.com/dsyorkd/node-red-config)
 
-# nzbget
+## nzbget
 
 ![](https://i.imgur.com/2KQbi2w.png)
 
@@ -90,7 +92,7 @@ Rules-engine for automations
 
 - [nzbget.yaml](nzbget/nzbget.yaml)
 
-# plex
+## plex
 
 ![](https://i.imgur.com/nDyS9OA.jpg)
 
@@ -98,7 +100,7 @@ Rules-engine for automations
 
 - [plex.yaml](plex/plex.yaml)
 
-# radarr
+## radarr
 
 ![](https://i.imgur.com/eAgWySC.png)
 
@@ -106,7 +108,7 @@ Rules-engine for automations
 
 - [radarr.yaml](radarr/radarr.yaml)
 
-# readarr
+## readarr
 
 ![](https://i.imgur.com/jc5Ftcr.png)
 
@@ -114,13 +116,13 @@ Rules-engine for automations
 
 - [readarr.yaml](readarr/readarr.yaml)
 
-# ser2sock
+## ser2sock
 
 [ser2sock](https://github.com/nutechsoftware/ser2sock) is a serial to socket redirector. This is used to bridge a home alarm panel to home-assistant for home automation.
 
 - [ser2sock.yaml](ser2sock/ser2sock.yaml)
 
-# sonarr
+## sonarr
 
 ![](https://i.imgur.com/0CS5ADs.png)
 
@@ -128,7 +130,7 @@ Rules-engine for automations
 
 - [sonarr.yaml](sonarr/sonarr.yaml)
 
-# tesla_dashcam
+## tesla_dashcam
 
 ![](https://i.imgur.com/2tbqMGa.jpg)
 
@@ -136,7 +138,7 @@ Rules-engine for automations
 
 - [tesla_dashcam.yaml](tesla_dashcam/tesla_dashcam.yaml)
 
-# teslamate
+## teslamate
 
 ![](https://i.imgur.com/qNlrxjH.png)
 ![](https://i.imgur.com/f12RcId.png)
@@ -145,7 +147,7 @@ Rules-engine for automations
 
 - [teslamate.yaml](teslamate/teslamate.yaml)
 
-# unifi
+## unifi
 
 ![](https://i.imgur.com/uakfLZo.png)
 
@@ -153,7 +155,7 @@ Rules-engine for automations
 
 - [unifi.yaml](unifi/unifi.yaml)
 
-# valheim
+## valheim
 
 ![](https://i.imgur.com/R1Jvrsr.jpg)
 
@@ -161,7 +163,7 @@ Rules-engine for automations
 
 - [valheim.yaml](valheim/valheim.yaml)
 
-# zwavejs2mqtt
+## zwavejs2mqtt
 
 ![](https://i.imgur.com/Odhu4gJ.png)
 

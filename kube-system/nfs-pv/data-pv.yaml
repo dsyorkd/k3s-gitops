@@ -1,17 +1,17 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: nfs-data-pv
+  name: nfs-config-pv
 spec:
-  storageClassName: data
+  storageClassName: config-data
   capacity:
     storage: 1Mi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: 172.29.244.10
-    path: "/media"
+    server: 172.29.236.29
+    path: "/containers"
   mountOptions:
     - nfsvers=4
     - tcp
@@ -27,7 +27,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: data
+  storageClassName: config-data
   resources:
     requests:
       storage: 1Mi
