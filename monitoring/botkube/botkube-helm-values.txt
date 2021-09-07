@@ -7,8 +7,8 @@ communications:
   discord:
     enabled: true
     token: '$BOTKUBE_DISCORD_TOKEN'
-    botid: '782247992648138773'
-    channel: '782247131649933332'
+    botid: '$BOTKUBE_DISCORD_ID' 
+    channel: '$BOTKUBE_DISCORD_CHANNEL' 
     notiftype: short
   webhook:
     enabled: false

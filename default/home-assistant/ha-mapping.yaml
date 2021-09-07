@@ -1,0 +1,18 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: hass-mapping
+spec:
+  host: hass.york.haus
+  prefix: /
+  service: hass
+
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: hass-vscode-mapping
+spec:
+  host: hass-vscode.york.haus
+  prefix: /
+  service: hass-vscode

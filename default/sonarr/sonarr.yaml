@@ -22,19 +22,6 @@ spec:
       tag: v3.0.6.1265
     env:
       TZ: "America/Chicago"
-    ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: "ambassador"
-        hosts:
-          - host: sonarr.york.haus
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "sonarr.york.haus"
     podAnnotations:
       backup.velero.io/backup-volumes: config
     persistence:

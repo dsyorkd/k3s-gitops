@@ -18,10 +18,10 @@ spec:
       interval: 5m
   values:
     tolerations:
-    - key: "arm"
-      operator: "Exists"
-    - key: "node-role.kubernetes.io/master"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
     config:
       lokiAddress: http://loki:3100/loki/api/v1/push
       snippets:
@@ -56,7 +56,7 @@ spec:
         service:
           type: LoadBalancer
           port: 1514
-          loadBalancerIP: 10.0.6.51
+          loadBalancerIP: 172.29.237.3
           externalTrafficPolicy: Local
     extraVolumes:
       - name: journal

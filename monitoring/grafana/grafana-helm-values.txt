@@ -1,7 +1,5 @@
 adminUser: syork@yorkserv.com
 adminPassword: "$GRAFANA_PASSWORD"
-env:
-  TESLAMATE_DB_PASSWORD: "$TESLAMATE_DB_PASSWORD"
 grafana.ini:
   auth.generic_oauth:
     enabled: true
@@ -9,9 +7,9 @@ grafana.ini:
     team_ids:
     allowed_organizations:
     name: Auth0
-    client_id: $AUTH0_GRAFANA_CLIENT_ID
-    client_secret: $AUTH0_GRAFANA_CLIENT_SECRET
+    client_id: "$AUTH0_GRAFANA_CLIENT_ID"
+    client_secret: "$AUTH0_GRAFANA_CLIENT_SECRET"
     scopes: openid profile email
-    auth_url: https://syork.auth0.com/authorize
-    token_url: https://syork.auth0.com/oauth/token
-    api_url: https://syork.auth0.com/userinfo
+    auth_url: "$AUTH0_GRAFANA_AUTH_URL"
+    token_url: "$AUTH0_GRAFANA_TOKEN_URL"
+    api_url: "$AUTH0_GRAFANA_API_URL"

@@ -32,7 +32,7 @@ spec:
         config:
           region: us-east-1
           s3ForcePathStyle: true
-          s3Url: http://truenas.home:9000
+          s3Url: http://able-swift.mass:9000
           publicUrl: https://minio.york.haus
       volumeSnapshotLocation:
         name: aws
@@ -82,33 +82,6 @@ spec:
         schedule: "0 6 * * *"
         template:
           ttl: "120h"
-      mcbr-minecraft-bedrock-hourly:
-        schedule: "0 */6 * * *"
-        template:
-          labelSelector:
-            matchLabels:
-              app: mcbr-minecraft-bedrock
-          ttl: "120h"
-          includedNamespaces:
-            - default
-      mcsv-minecraft-hourly:
-        schedule: "0 * * * *"
-        template:
-          labelSelector:
-            matchLabels:
-              app: mcsv-minecraft
-          ttl: "120h"
-          includedNamespaces:
-            - default
-      mc-minecraft-hourly:
-        schedule: "0 */6 * * *"
-        template:
-          labelSelector:
-            matchLabels:
-              app: mc-minecraft
-          ttl: "120h"
-          includedNamespaces:
-            - default
   valuesFrom:
     - kind: Secret
       name: "velero-helm-values"

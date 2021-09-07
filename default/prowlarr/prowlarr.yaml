@@ -22,19 +22,6 @@ spec:
       tag: v0.1.1.919
     env:
       TZ: "America/Chicago"
-    ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: "ambassador"
-        hosts:
-          - host: "prowlarr.york.haus"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "prowlarr.york.haus"
     persistence:
       config:
         enabled: true

@@ -30,9 +30,6 @@ spec:
         hostname: thanos.york.haus
         annotations:
           kubernetes.io/ingress.class: ambassador
-          nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16"
-          nginx.ingress.kubernetes.io/auth-url: "https://auth.york.haus/oauth2/auth"
-          nginx.ingress.kubernetes.io/auth-signin: https://auth.york.haus/oauth2/start
         tls: true
     queryFrontend:
       enabled: false

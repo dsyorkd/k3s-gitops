@@ -1,0 +1,8 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: emqx-mapping
+spec:
+  host: empx.york.haus
+  prefix: /
+  service: emqx

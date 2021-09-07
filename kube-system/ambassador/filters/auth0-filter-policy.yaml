@@ -1,0 +1,15 @@
+---
+apiVersion: getambassador.io/v2
+kind: FilterPolicy
+metadata:
+  name: httpbin-policy
+  namespace: default
+spec:
+  rules:
+    - host: "ha.york.haus"
+      path: /
+      filters:
+        - name: auth0-filter ## Enter the Filter name from above
+          arguments:
+            scope:
+              - "openid"

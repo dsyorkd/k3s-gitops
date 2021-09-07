@@ -21,7 +21,7 @@ spec:
     recreatePods: true
     service:
       type: LoadBalancer
-      loadBalancerIP: 10.0.6.50
+      loadBalancerIP: 172.29.237.50
     tolerations:
       - key: "arm"
         operator: "Exists"
@@ -70,20 +70,6 @@ spec:
         cpu: 100m
         memory: 150Mi
 
-    ingress:
-      dashboard:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: ambassador
-          nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16"
-          nginx.ingress.kubernetes.io/auth-url: "https://auth.york.haus.com/oauth2/auth"
-          nginx.ingress.kubernetes.io/auth-signin: https://auth.york.haus.com/oauth2/start
-        path: /
-        hosts:
-          - emqx.york.haus.com
-        tls:
-          - hosts:
-              - emqx.york.haus.com
   valuesFrom:
     - kind: Secret
       name: "emqx-helm-values"

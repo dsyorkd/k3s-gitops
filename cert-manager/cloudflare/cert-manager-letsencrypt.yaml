@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt-test
 spec:
   acme:
-    email: jeff@dsyorkd.com
+    email: syork@yorkserv.com
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-test
@@ -48,6 +48,7 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
+  commonName: york.haus.
   dnsNames:
     - york.haus
     - "*.york.haus"

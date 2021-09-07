@@ -36,19 +36,19 @@ spec:
         abort_if_cluster_join_fails: false
         bind_port: 7946
         join_members:
-        - loki-headless.logs.svc.cluster.local:7946
+          - loki-headless.logs.svc.cluster.local:7946
         max_join_backoff: 1m
         max_join_retries: 10
         min_join_backoff: 1s
       schema_config:
         configs:
-        - from: "2020-10-24"
-          store: boltdb-shipper
-          object_store: s3
-          schema: v11
-          index:
-            prefix: index_
-            period: 24h
+          - from: "2020-10-24"
+            store: boltdb-shipper
+            object_store: s3
+            schema: v11
+            index:
+              prefix: index_
+              period: 24h
       storage_config:
         boltdb_shipper:
           active_index_directory: /data/loki/index
@@ -65,19 +65,19 @@ spec:
     serviceMonitor:
       enabled: true
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"
     affinity:
       podAntiAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - loki
-          topologyKey: "kubernetes.io/hostname"
+          - labelSelector:
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                    - loki
+            topologyKey: "kubernetes.io/hostname"
   valuesFrom:
-  - kind: Secret
-    name: "loki-helm-values"
-    optional: false
+    - kind: Secret
+      name: "loki-helm-values"
+      optional: false

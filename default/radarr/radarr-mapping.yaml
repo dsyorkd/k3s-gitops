@@ -1,0 +1,8 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: radarr-mapping
+spec:
+  host: radarr.york.haus
+  prefix: /
+  service: radarr

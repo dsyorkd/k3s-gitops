@@ -1,0 +1,15 @@
+---
+apiVersion: getambassador.io/v2
+kind: Filter
+metadata:
+  name: auth0-filter
+  namespace: default
+spec:
+  OAuth2:
+    authorizationURL: https://datawire-ambassador.auth0.com
+    extraAuthorizationParameters:
+      audience: https://syork.us.auth0.com/api/v2/
+    clientID: 2Erlw1raFOM9BtmQgjHbI1cfxDfCPfK3
+    secret:
+    protectedOrigins:
+      - origin: https://datawire-ambassador.com

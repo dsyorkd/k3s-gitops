@@ -168,14 +168,13 @@ EOF
 loadSecretsToVault() {
   message "writing secrets to vault"
   vault kv put secrets/flux-system/discord-webhook address="$DISCORD_FLUX_WEBHOOK_URL"
-  vault kv put secrets/kube-system/ambassador-basic-auth-jeff auth="$JEFF_AUTH"
+  vault kv put secrets/kube-system/ambassador-basic-auth-syork auth="$SYORK_AUTH"
   vault kv put secrets/cert-manager/cloudflare-api-key api-key="$CF_API_KEY"
 
   ####################
   # helm chart values
   ####################
   kvault "kube-system/kured/kured-helm-values.txt"
-  kvault "kube-system/oauth2-proxy/oauth2-proxy-helm-values.txt"
   kvault "logs/loki/loki-helm-values.txt"
   kvault "monitoring/botkube/botkube-helm-values.txt"
   kvault "monitoring/grafana/grafana-helm-values.txt"
@@ -185,11 +184,8 @@ loadSecretsToVault() {
   kvault "default/emqx/emqx-helm-values.txt"
   kvault "default/frigate/frigate-helm-values.txt"
   kvault "default/home-assistant/home-assistant-helm-values.txt"
-  kvault "default/monica/monica-helm-values.txt"
   kvault "default/plex/plex-helm-values.txt"
   kvault "default/rtorrent-flood/rtorrent-flood-helm-values.txt"
-  kvault "default/teslamate/teslamate-helm-values.txt"
-  kvault "default/valheim/valheim-helm-values.txt"
   kvault "velero/velero/velero-helm-values.txt"
 }
 

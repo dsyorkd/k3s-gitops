@@ -30,25 +30,12 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: 10.0.6.53
+        loadBalancerIP: 172.29.237.4
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/allow-shared-ip: plex
         port:
           port: 32400
-    ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: "ambassador"
-        hosts:
-          - host: "plex.york.haus"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "plex.york.haus"
     persistence:
       config:
         enabled: true
