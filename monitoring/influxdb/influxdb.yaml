@@ -25,7 +25,7 @@ spec:
     persistence:
       enabled: true
       size: 50Gi
-      storageClass: rook-ceph-block
+      storageClass: nfs-external-provisioner-db
     resources:
       requests:
         memory: 2000Mi
@@ -51,10 +51,10 @@ spec:
         protocol: tcp
         consistency-lvel: one
         templates:
-        - "*.app env.service.resource.measurement"
-        - "servers.* .host.resource.measurement.field*"
+          - "*.app env.service.resource.measurement"
+          - "servers.* .host.resource.measurement.field*"
     podAnnotations:
       backup.velero.io/backup-volumes: influxdb-data
     tolerations:
-    - key: "arm"
-      operator: "Exists"
+      - key: "arm"
+        operator: "Exists"

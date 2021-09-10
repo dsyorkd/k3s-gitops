@@ -29,7 +29,7 @@ spec:
       data:
         enabled: true
         mountPath: /data
-        storageClass: "rook-ceph-block"
+        storageClass: "nfs-external-provisioner-config"
         accessMode: ReadWriteOnce
         size: "5Gi"
     podAnnotations:

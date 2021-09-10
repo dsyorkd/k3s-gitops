@@ -39,7 +39,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: "rook-ceph-block"
+        storageClass: "nfs-external-provisioner-config"
         accessMode: ReadWriteOnce
         size: 20Gi
       transcode:

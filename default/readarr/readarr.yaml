@@ -29,7 +29,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: "rook-ceph-block"
+        storageClass: "nfs-external-provisioner-config"
         size: 2Gi
       media:
         enabled: true

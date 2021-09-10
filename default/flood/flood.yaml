@@ -48,7 +48,7 @@ spec:
       config:
         enabled: true
         size: 1Gi
-        storageClass: rook-ceph-block
+        storageClass: nfs-external-provisioner-config
       socket:
         enabled: true
         type: emptyDir

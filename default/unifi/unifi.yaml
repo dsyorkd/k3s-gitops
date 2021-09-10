@@ -24,7 +24,7 @@ spec:
       data:
         enabled: true
         size: 20Gi
-        storageClass: rook-ceph-block
+        storageClass: nfs-external-provisioner-config
         accessMode: ReadWriteOnce
     env:
       TZ: "America/Chicago"
