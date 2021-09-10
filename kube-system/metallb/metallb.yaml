@@ -19,15 +19,15 @@ spec:
   values:
     configInline:
       peers:
-      - peer-address: 10.0.7.1
-        peer-asn: 64512
-        my-asn: 64512
+        - peer-address: 172.29.236.1
+          peer-asn: 64512
+          my-asn: 64512
       address-pools:
-      - name: bgp
-        protocol: bgp
-        addresses:
-        -  10.0.6.0/24
-        avoid-buggy-ips: true
+        - name: bgp
+          protocol: bgp
+          addresses:
+            - 172.29.240.0/22
+          avoid-buggy-ips: true
     prometheusRule:
       enabled: true
     prometheus:
@@ -41,16 +41,16 @@ spec:
       #   repository: quay.io/metallb/controller
       #   tag: v0.10.1
       tolerations:
-      - key: "arm"
-        operator: "Exists"
+        - key: "arm"
+          operator: "Exists"
     speaker:
       # image:
       #   repository: quay.io/metallb/speaker
       #   tag: v0.10.1
       tolerations:
-      - key: "arm"
-        operator: "Exists"
-      - key: "armhf"
-        operator: "Exists"
-      - key: "node-role.kubernetes.io/master"
-        operator: "Exists"
+        - key: "arm"
+          operator: "Exists"
+        - key: "armhf"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          operator: "Exists"

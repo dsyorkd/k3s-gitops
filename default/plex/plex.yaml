@@ -30,7 +30,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: 172.29.237.4
+        loadBalancerIP: 172.29.240.4
         externalTrafficPolicy: Local
         annotations:
           metallb.universe.tf/allow-shared-ip: plex
