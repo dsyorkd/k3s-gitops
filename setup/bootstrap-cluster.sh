@@ -34,7 +34,7 @@ installFlux() {
     --repository=k8s-gitops \
     --branch master \
     --private=false \
-    --verbose
+    --verbose \
     --personal \
     --network-policy=false
 
