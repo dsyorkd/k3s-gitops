@@ -38,19 +38,10 @@ installManualObjects(){
   # do
   #   kapply "$i"
   # done
-
-  ###################
-  # rook
-  ###################
-  #ROOK_NAMESPACE_READY=1
-  #while [ $ROOK_NAMESPACE_READY != 0 ]; do
-  #  echo "waiting for rook-ceph namespace to be fully ready..."
-    # this is a hack to check for the namespace
-  #  kubectl -n rook-ceph wait --for condition=Established crd/volumes.rook.io > /dev/null 2>&1
-  #  ROOK_NAMESPACE_READY="$?"
-  #  sleep 5
-  #done
-  #kapply "$REPO_ROOT"/rook-ceph/dashboard/ingress.txt
+  kustomize build ../cert-manager/crds > /tmp/build.yaml
+  kustomize build ../monitoring/kube-prometheus-stack/crds >> /tmp/build.yaml
+  cat ../kube-system/vault-secrets-operator/crd.yaml >> /tmp/build.yaml
+  kubectl apply -f /tmp/build.yaml && rm -f /tmp/build.yaml
 
 }
 
