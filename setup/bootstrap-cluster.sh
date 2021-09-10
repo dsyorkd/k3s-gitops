@@ -31,7 +31,7 @@ installFlux() {
   fi
   flux bootstrap github \
     --owner=dsyorkd \
-    --repository=k8s-gitops \
+    --repository=k3s-gitops \
     --branch master \
     --verbose \
     --personal \
