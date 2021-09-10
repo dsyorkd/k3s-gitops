@@ -20,6 +20,8 @@ spec:
     server:
       dataStorage:
         enabled: true
+        size: 10Gi
+        accessMode: ReadWriteOnce
         storageClass: "nfs-external-provisioner-config"
       extraEnvironmentVars:
         GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
