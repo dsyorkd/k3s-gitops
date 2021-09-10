@@ -41,7 +41,7 @@ installManualObjects(){
   kustomize build ../cert-manager/crds > /tmp/build.yaml
   kustomize build ../monitoring/kube-prometheus-stack/crds >> /tmp/build.yaml
   kustomize build ../kube-system/ambassador/crds >> /tmp/build.yaml
-  kustomize build ../system-upgrade/crds >> /tmp/build.yaml
+  #kustomize build ../system-upgrade/crds >> /tmp/build.yaml
   cat ../kube-system/vault-secrets-operator/crd.yaml >> /tmp/build.yaml
   cat ../kube-system/registry-creds/crds/crd.yaml >> /tmp/build.yaml 
   kubectl apply -f /tmp/build.yaml && rm -f /tmp/build.yaml
