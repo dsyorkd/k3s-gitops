@@ -1,7 +1,7 @@
 apiVersion: getambassador.io/v2
 kind: Mapping
 metadata:
-  name: flood-mapping
+  name: thanos-mapping
 spec:
   host: thanos.york.haus
   prefix: /
