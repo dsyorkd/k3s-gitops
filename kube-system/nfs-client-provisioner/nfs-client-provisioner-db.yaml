@@ -25,4 +25,5 @@ spec:
       path: "/db"
     storageClass:
       name: nfs-external-provisioner-db
+      pathPattern: "${.PVC.namespace}/${.PVC.annotations.nfs.io/storage-path}"
       defaultClass: false

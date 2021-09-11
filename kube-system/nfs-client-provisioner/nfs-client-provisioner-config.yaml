@@ -25,4 +25,5 @@ spec:
       path: "/containers"
     storageClass:
       name: config-data
+      pathPattern: "${.PVC.namespace}/${.PVC.annotations.nfs.io/storage-path}"
       defaultClass: false
