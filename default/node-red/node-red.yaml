@@ -29,7 +29,7 @@ spec:
       data:
         enabled: true
         mountPath: /data
-        storageClass: "nfs-external-provisioner-config"
+        storageClass: "config-data"
         accessMode: ReadWriteOnce
         size: "5Gi"
     podAnnotations:

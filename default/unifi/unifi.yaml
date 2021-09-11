@@ -24,8 +24,8 @@ spec:
       data:
         enabled: true
         size: 20Gi
-        storageClass: nfs-external-provisioner-config
-        accessMode: ReadWriteOnce
+        storageClass: config-data
+        accessMode: ReadWriteMany
     env:
       TZ: "America/Chicago"
     ingress:

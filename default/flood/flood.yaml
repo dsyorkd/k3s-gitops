@@ -48,7 +48,7 @@ spec:
       config:
         enabled: true
         size: 1Gi
-        storageClass: nfs-external-provisioner-config
+        storageClass: config-data
       socket:
         enabled: true
         type: emptyDir

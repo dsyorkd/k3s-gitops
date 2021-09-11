@@ -25,7 +25,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: "nfs-external-provisioner-config"
+        storageClass: "config-data"
         size: 5Gi
       media:
         enabled: true

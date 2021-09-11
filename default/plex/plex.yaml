@@ -39,7 +39,7 @@ spec:
     persistence:
       config:
         enabled: true
-        storageClass: "nfs-external-provisioner-config"
+        storageClass: "config-data"
         accessMode: ReadWriteOnce
         size: 20Gi
       transcode:
