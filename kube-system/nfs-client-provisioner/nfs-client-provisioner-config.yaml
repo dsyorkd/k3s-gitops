@@ -24,4 +24,5 @@ spec:
       server: "172.29.236.29"
       path: "/containers"
     storageClass:
+      name: config-data
       defaultClass: false

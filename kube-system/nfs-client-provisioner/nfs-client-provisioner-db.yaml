@@ -24,4 +24,5 @@ spec:
       server: "172.29.236.29"
       path: "/db"
     storageClass:
+      name: nfs-external-provisioner-db
       defaultClass: false
