@@ -20,9 +20,9 @@ spec:
     server:
       dataStorage:
         enabled: true
-        size: 10Gi
+        size: 20Gi
+        storageClass: config-data
         accessMode: ReadWriteMany
-        storageClass: "config-data"
       extraEnvironmentVars:
         GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
       extraVolumes:
