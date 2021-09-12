@@ -59,7 +59,7 @@ spec:
               path = "/vault/data"
             }
             seal "gcpckms" {
-              project     = "kms-vault"
+              project     = "yorkhaus-223621"
               region      = "global"
               key_ring    = "vault-unseal"
               crypto_key  = "vault-key"
