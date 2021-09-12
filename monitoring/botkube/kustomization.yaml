@@ -5,6 +5,4 @@ secretGenerator:
   - name: botkube-helm-values
     files:
       - values.yaml=botkube-helm-values.txt
-    envs:
-      - ../../setup/.env
     type: Opaque
