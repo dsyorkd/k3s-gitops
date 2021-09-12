@@ -23,8 +23,8 @@ spec:
         size: 20Gi
         storageClass: config-data
         accessMode: ReadWriteMany
-      #extraEnvironmentVars:
-      #  GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
+      extraEnvironmentVars:
+        GOOGLE_APPLICATION_CREDENTIALS: /vault/userconfig/kms-vault/account.json
       extraVolumes:
         - type: secret
           name: kms-vault
