@@ -166,7 +166,7 @@ spec:
         storageSpec:
           volumeClaimTemplate:
             spec:
-              storageClassName: nfs-external-provisioner-config
+              storageClassName: config-data
               resources:
                 requests:
                   storage: 10Gi

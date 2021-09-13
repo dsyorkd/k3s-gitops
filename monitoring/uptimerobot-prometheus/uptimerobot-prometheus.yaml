@@ -18,8 +18,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: dsyorkd/prometheus-uptimerobot-exporter
-      tag: 0.0.1
+      repository: ukwa/prometheus-uptimerobot-exporter
+      tag: "latest"
     tolerations:
       - key: "arm"
         operator: "Exists"
