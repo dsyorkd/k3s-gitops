@@ -17,6 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    global:
+      storageClass: "config-data"
     query:
       enabled: true
       replicaCount: 2
