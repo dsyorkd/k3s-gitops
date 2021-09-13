@@ -32,7 +32,7 @@ spec:
         config:
           region: us-east-1
           s3ForcePathStyle: true
-          s3Url: http://able-swift.mass:9000
+          s3Url: http://able-swift.maas:9000
           publicUrl: https://minio.york.haus
       volumeSnapshotLocation:
         name: aws
