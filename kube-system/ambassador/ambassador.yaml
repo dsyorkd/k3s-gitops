@@ -56,6 +56,6 @@ spec:
           # protocol: TCP
           # nodePort: 30222
   valuesFrom:
-    - kind: ConfigMap
-      name: "ambassador-agent-cloud-token"
+    - kind: Secret
+      name: "ambassador-helm-values"
       optional: false
