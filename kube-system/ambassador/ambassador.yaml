@@ -58,4 +58,4 @@ spec:
   valuesFrom:
     - kind: Secret
       name: "ambassador-helm-values"
-      optional: true
+      optional: false
