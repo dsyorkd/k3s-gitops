@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  url: https://www.getambassador.io
+  url: https://getambassador.io
   timeout: 3m
