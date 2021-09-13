@@ -17,8 +17,6 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    global:
-      storageClass: "config-data"
     query:
       enabled: true
       replicaCount: 2
@@ -46,6 +44,9 @@ spec:
       persistence:
         enabled: true
         size: 20Gi
+        storageClass: "config-data"
+        accessModes:
+          - ReadWriteOnce
     ruler:
       enabled: false
     metrics:
