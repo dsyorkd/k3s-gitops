@@ -10,7 +10,7 @@ spec:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
       chart: home-assistant
-      version: 10.1.0
+      version: 11.0.1
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -27,7 +27,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: 172.29.240.1
+        loadBalancerIP: 172.29.240.2
 
     prometheus:
       serviceMonitor:
