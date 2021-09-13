@@ -30,7 +30,7 @@ spec:
       configmap.reloader.stakater.com/reload: "grafana"
     persistence:
       enabled: true
-      storageClassName: "nfs-external-provisioner-config"
+      storageClassName: "config-data"
       size: 10Gi
       accessModes:
         - ReadWriteOnce
