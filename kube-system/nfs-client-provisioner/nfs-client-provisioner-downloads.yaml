@@ -24,4 +24,5 @@ spec:
       server: "172.29.244.10"
       path: "/downloads"
     storageClass:
+      name: media-downloads
       defaultClass: false

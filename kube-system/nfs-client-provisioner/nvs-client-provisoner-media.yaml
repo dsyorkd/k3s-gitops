@@ -24,4 +24,4 @@ spec:
       server: "172.29.244.10"
       path: "/media"
     storageClass:
-      defaultClass: true
+      name: media
