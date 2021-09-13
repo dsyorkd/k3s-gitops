@@ -6,5 +6,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  url: https://coredns.github.io/helm
+  url: https://github.com/coredns/coredns
   timeout: 3m
