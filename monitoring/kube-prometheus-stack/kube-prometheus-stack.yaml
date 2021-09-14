@@ -61,14 +61,6 @@ spec:
             backup.velero.io/backup-volumes: alertmanager-kube-prometheus-stack-alertmanager-db
       ingress:
         enabled: false
-        pathType: Prefix
-        annotations:
-          kubernetes.io/ingress.class: "ambassador"
-        hosts:
-          - prom-alert.york.haus
-        tls:
-          - hosts:
-              - prom-alert.york.haus
       config:
         global:
           resolve_timeout: 5m
@@ -137,14 +129,6 @@ spec:
     prometheus:
       ingress:
         enabled: false
-        pathType: Prefix
-        annotations:
-          kubernetes.io/ingress.class: "ambassador"
-        hosts:
-          - prom-server.york.haus
-        tls:
-          - hosts:
-              - prom-server.york.haus
       prometheusSpec:
         # image:
         #   repository: quay.io/prometheus/prometheus
