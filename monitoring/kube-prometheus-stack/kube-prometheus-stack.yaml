@@ -136,7 +136,7 @@ spec:
           operator: "Exists"
     prometheus:
       ingress:
-        enabled: true
+        enabled: false
         pathType: Prefix
         annotations:
           kubernetes.io/ingress.class: "ambassador"
