@@ -60,7 +60,7 @@ spec:
           annotations:
             backup.velero.io/backup-volumes: alertmanager-kube-prometheus-stack-alertmanager-db
       ingress:
-        enabled: true
+        enabled: false
         pathType: Prefix
         annotations:
           kubernetes.io/ingress.class: "ambassador"

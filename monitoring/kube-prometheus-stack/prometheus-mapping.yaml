@@ -1,0 +1,19 @@
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: prometheus-mapping
+spec:
+  host: prom-server.york.haus
+  prefix: /
+  service: prometheus
+
+---
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: alertmanager-mapping
+spec:
+  host: prom-alert.york.haus
+  prefix: /
+  service: alertmanager
