@@ -43,7 +43,10 @@ spec:
       #   tag: v0.4.0
       configReloaderCpu: 200m
       admissionWebhooks:
-        enabled: false
+        enabled: true
+        patch:
+          enabled: true
+
     alertmanager:
       alertmanagerSpec:
         storage:
