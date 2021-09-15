@@ -23,8 +23,8 @@ spec:
           peer-asn: 64512
           my-asn: 64512
       address-pools:
-        - name: bgp
-          protocol: bgp
+        - name: layer2
+          protocol: layer2
           addresses:
             - 172.29.243.1-172.29.243.254
           avoid-buggy-ips: true

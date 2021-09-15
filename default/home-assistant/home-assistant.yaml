@@ -27,6 +27,7 @@ spec:
     service:
       main:
         type: LoadBalancer
+        loadBalancerIP: 172.29.243.3
     prometheus:
       serviceMonitor:
         enabled: false
