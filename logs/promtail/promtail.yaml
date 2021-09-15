@@ -56,7 +56,6 @@ spec:
         service:
           type: LoadBalancer
           port: 1514
-          loadBalancerIP: 172.29.240.3
           externalTrafficPolicy: Local
     extraVolumes:
       - name: journal

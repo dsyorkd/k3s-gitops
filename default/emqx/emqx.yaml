@@ -21,7 +21,6 @@ spec:
     recreatePods: true
     service:
       type: LoadBalancer
-      loadBalancerIP: 172.29.240.50
     tolerations:
       - key: "arm"
         operator: "Exists"

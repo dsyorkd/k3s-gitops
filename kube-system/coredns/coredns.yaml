@@ -78,6 +78,6 @@ spec:
         domain: york.haus
         contents: |
           york.haus.   IN SOA etta.ns.cloudflare.com. dns.cloudflare.com. 2020100600 10000 2400 604800 3600
-          k3s.york.haus. IN A 172.29.240.100
-          *.york.haus. IN A   172.29.240.1
-          york.haus. IN A   172.29.240.1
+          k3s.york.haus. IN A 172.29.243.100
+          *.york.haus. IN A   172.29.243.1
+          york.haus. IN A   172.29.243.1

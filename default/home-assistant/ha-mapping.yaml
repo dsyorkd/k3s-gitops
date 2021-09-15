@@ -15,4 +15,4 @@ metadata:
 spec:
   host: hass-vscode.york.haus
   prefix: /
-  service: hass-vscode
+  service: hass-vscode:8123
