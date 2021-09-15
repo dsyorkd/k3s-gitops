@@ -5,4 +5,4 @@ metadata:
 spec:
   host: unifi.york.haus
   prefix: /
-  service: https://unifi
+  service: https://unifi:8443

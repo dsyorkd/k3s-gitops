@@ -47,6 +47,7 @@ spec:
         type: LoadBalancer
         annotations:
           metallb.universe.tf/allow-shared-ip: unifi
+        loadBalancerIP: 172.29.243.2
         externalTrafficPolicy: Local
         ports:
           stun:
@@ -60,6 +61,7 @@ spec:
         type: LoadBalancer
         annotations:
           metallb.universe.tf/allow-shared-ip: unifi
+        loadBalancerIP: 172.29.243.2
         externalTrafficPolicy: Local
         ports:
           stun:
