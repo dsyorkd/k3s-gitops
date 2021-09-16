@@ -27,17 +27,7 @@ spec:
 
     ingress:
       main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: "ambassador"
-        hosts:
-          - host: f.york.haus
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "f.york.haus"
+        enabled: false
 
     persistence:
       data:
@@ -85,7 +75,7 @@ spec:
     additionalContainers:
       - name: rtorrent
         # image: dsyorkd/alpine-rtorrent:0.9.8-1
-        image: jesec/rtorrent
+        image: jesec/rtorrent-flood
         env:
           - name: TZ
           - name: PUID
