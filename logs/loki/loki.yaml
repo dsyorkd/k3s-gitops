@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     replicas: 3
-    config:
+    config: |
       distributor:
         ring:
           kvstore:
@@ -32,14 +32,6 @@ spec:
           final_sleep: 0s
         chunk_idle_period: 5m
         chunk_retain_period: 30s
-      memberlist:
-        abort_if_cluster_join_fails: false
-        bind_port: 7946
-        join_members:
-          - loki-headless.logs.svc.cluster.local:7946
-        max_join_backoff: 1m
-        max_join_retries: 10
-        min_join_backoff: 1s
       schema_config:
         configs:
           - from: "2020-10-24"
