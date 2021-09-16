@@ -75,7 +75,7 @@ spec:
     additionalContainers:
       - name: rtorrent
         # image: dsyorkd/alpine-rtorrent:0.9.8-1
-        image: jesec/rtorrent-flood
+        image: jesec/rtorrent
         env:
           - name: TZ
           - name: PUID
