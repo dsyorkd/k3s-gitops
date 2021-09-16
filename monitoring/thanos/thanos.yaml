@@ -25,12 +25,6 @@ spec:
       dnsDiscovery:
         sidecarsService: kube-prometheus-stack-thanos-discovery
         sidecarsNamespace: monitoring
-      ingress:
-        enabled: true
-        hostname: thanos.york.haus
-        annotations:
-          kubernetes.io/ingress.class: ambassador
-        tls: true
     queryFrontend:
       enabled: false
     bucketweb:
