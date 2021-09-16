@@ -85,7 +85,7 @@ spec:
     additionalContainers:
       - name: rtorrent
         # image: dsyorkd/alpine-rtorrent:0.9.8-1
-        image: jesec/rtorrent:latest
+        image: jesec/rtorrent
         env:
           - name: TZ
           - name: PUID
@@ -150,7 +150,7 @@ spec:
       bt:
         enabled: true
         type: LoadBalancer
-        loadBalancerIP: 10.0.6.57
+        loadBalancerIP: 172.29.243.15
         ports:
           bt:
             enabled: true
