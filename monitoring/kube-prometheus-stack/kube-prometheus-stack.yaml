@@ -42,8 +42,10 @@ spec:
       #   repository: jimmidyson/configmap-reload
       #   tag: v0.4.0
       configReloaderCpu: 200m
+      tls:
+        enabled: false
       admissionWebhooks:
-        enabled: true
+        enabled: false
         patch:
           enabled: true
 
