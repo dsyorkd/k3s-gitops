@@ -55,6 +55,7 @@ spec:
         protocol: TCP
         service:
           type: LoadBalancer
+          loadBalancerIP: 172.29.243.33
           port: 1514
           externalTrafficPolicy: Local
     extraVolumes:
