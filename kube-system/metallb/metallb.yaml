@@ -18,10 +18,6 @@ spec:
       interval: 5m
   values:
     configInline:
-      peers:
-        - peer-address: 172.29.236.1
-          peer-asn: 64512
-          my-asn: 64512
       address-pools:
         - name: layer2
           protocol: layer2
