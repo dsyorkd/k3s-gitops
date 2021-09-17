@@ -91,7 +91,7 @@ spec:
           timeoutSeconds: 1
         ports:
           - name: bt
-            containerPort: 49161
+            containerPort: 30001
             protocol: TCP
         readinessProbe:
           failureThreshold: 3
