@@ -5,4 +5,4 @@ metadata:
 spec:
   host: radarr.york.haus
   prefix: /
-  service: radarr
+  service: http://radarr:7878
