@@ -5,4 +5,4 @@ metadata:
 spec:
   host: sonarr.york.haus
   prefix: /
-  service: sonarr
+  service: http://sonarr:8989
