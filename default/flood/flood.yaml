@@ -146,4 +146,4 @@ spec:
             enabled: true
             port: 49161
             protocol: TCP
-            targetPort: 3000
+            targetPort: 3001

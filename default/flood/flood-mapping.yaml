@@ -3,6 +3,6 @@ kind: Mapping
 metadata:
   name: flood-mapping
 spec:
-  host: bt.york.haus
+  host: flood.york.haus
   prefix: /
-  service: bt:49161
+  service: http://flood:3001
