@@ -5,4 +5,4 @@ metadata:
 spec:
   host: plex.york.haus
   prefix: /
-  service: plex:32400
+  service: http://plex:32400/web
