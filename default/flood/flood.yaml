@@ -109,7 +109,7 @@ spec:
         startupProbe:
           failureThreshold: 60
           periodSeconds: 10
-          initialDelaySeconds: 5
+          initialDelaySeconds: 8
           successThreshold: 1
           tcpSocket:
             port: bt
