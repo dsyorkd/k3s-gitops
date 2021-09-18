@@ -5,7 +5,7 @@ metadata:
 spec:
   host: hass.york.haus
   prefix: /
-  service: hass
+  service: hass.default
 
 ---
 apiVersion: getambassador.io/v2
@@ -15,4 +15,4 @@ metadata:
 spec:
   host: hass-vscode.york.haus
   prefix: /
-  service: hass-vscode:8123
+  service: hass-vscode.default
