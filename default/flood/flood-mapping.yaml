@@ -5,4 +5,4 @@ metadata:
 spec:
   host: flood.york.haus
   prefix: /
-  service: flood
+  service: flood:3000

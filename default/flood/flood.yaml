@@ -142,7 +142,7 @@ spec:
         type: LoadBalancer
         loadBalancerIP: 172.29.243.15
         ports:
-          bt:
+          http:
             enabled: true
-            port: 30001
+            port: 3000
             protocol: TCP
