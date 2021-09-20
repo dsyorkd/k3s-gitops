@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  values.yaml: |
+    Y29tbXVuaWNhdGlvbnM6CiAgc2xhY2s6CiAgICBlbmFibGVkOiBmYWxzZQogICAgY2hhbm
+    5lbDogJ25vdGlmaWNhdGlvbnMnCiAgICB0b2tlbjogJyRCT1RLVUJFX1NMQUNLX1RPS0VO
+    JwogICAgbm90aWZ0eXBlOiBzaG9ydAogIGRpc2NvcmQ6CiAgICBlbmFibGVkOiB0cnVlCi
+    AgICB0b2tlbjogJyRCT1RLVUJFX0RJU0NPUkRfVE9LRU4nCiAgICBib3RpZDogJyRCT1RL
+    VUJFX0RJU0NPUkRfSUQnIAogICAgY2hhbm5lbDogJyRCT1RLVUJFX0RJU0NPUkRfQ0hBTk
+    5FTCcgCiAgICBub3RpZnR5cGU6IHNob3J0CiAgd2ViaG9vazoKICAgIGVuYWJsZWQ6IGZh
+    bHNlCiAgICB1cmw6ICckRElTQ09SRF9CT1RLVUJFX1dFQkhPT0tfVVJMJwo=
+kind: Secret
+metadata:
+  name: botkube-helm-values-t46bgbmhkt
+type: Opaque

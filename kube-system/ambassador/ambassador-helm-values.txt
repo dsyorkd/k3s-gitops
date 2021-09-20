@@ -1,5 +1,0 @@
-licenseKey:
-  value:
-  createSecret: true
-  secretName: 
-  annotations: {}

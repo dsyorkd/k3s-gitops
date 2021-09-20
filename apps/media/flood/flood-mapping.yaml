@@ -1,0 +1,8 @@
+apiVersion: getambassador.io/v2
+kind: Mapping
+metadata:
+  name: flood-mapping
+spec:
+  host: flood.york.haus
+  prefix: /
+  service: flood-bt.default:3000

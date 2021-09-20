@@ -1,0 +1,64 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ambassador
+  namespace: kube-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://weaveworks.github.io/kured
+      chart: ambassador
+      version: 6.7.13
+      sourceRef:
+        kind: HelmRepository
+        name: ambassador-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      ossTag: 1.13.10
+      aesTag: 1.13.10
+      pullPolicy: IfNotPresent
+      ossRepository: docker.io/datawire/ambassador
+      aesRepository: docker.io/datawire/aes
+    deploymentStrategy:
+      type: RollingUpdate
+    dnsPolicy: ClusterFirst
+    hostNetwork: false
+    podAnnotations: { prometheus.io/scrape: "true", prometheus.io/port: "9102" }
+    metrics:
+      serviceMonitor:
+        enabled: false
+    redis:
+      deployment: {}
+    service:
+      type: LoadBalancer
+      loadBalancerIP: 172.29.243.1
+      # Note that target http ports need to match your ambassador configurations service_port
+      # https://www.getambassador.io/reference/modules/#the-ambassador-module
+      ports:
+        - name: http
+          port: 80
+          targetPort:
+            8080
+            # protocol: TCP
+            # nodePort: 30080
+            # hostPort: 80
+        - name: https
+          port: 443
+          targetPort:
+            8443
+            # protocol: TCP
+            # nodePort: 30443
+            # hostPort: 443
+          # TCPMapping_Port
+          # port: 2222
+          # targetPort: 2222
+          # protocol: TCP
+          # nodePort: 30222
+  valuesFrom:
+    - kind: Secret
+      name: "ambassador-helm-values"
+      optional: false

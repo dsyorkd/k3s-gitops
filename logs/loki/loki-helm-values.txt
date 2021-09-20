@@ -1,9 +1,0 @@
-config:
-  storage_config:
-    aws:
-      bucketnames: loki
-      endpoint: able-swift.maas:9000
-      access_key_id: "${MINIO_ACCESS_KEY}"
-      secret_access_key: "${MINIO_SECRET_KEY}"
-      s3forcepathstyle: true
-      insecure: true

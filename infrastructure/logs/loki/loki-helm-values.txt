@@ -1,0 +1,9 @@
+config:
+  storage_config:
+    aws:
+      bucketnames: loki
+      endpoint: able-swift.maas:9000
+      access_key_id: "8GYA1O82K27Q8UKCCGCS"
+      secret_access_key: "kfsNzZ7+crcIIhY7DtWjKNe5OHSq2fCVqH077TCK"
+      s3forcepathstyle: true
+      insecure: true

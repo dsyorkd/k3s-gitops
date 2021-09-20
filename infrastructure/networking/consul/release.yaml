@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: consul
+  namespace: kube-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: consul
+      version: "0.32.1"
+      sourceRef:
+        kind: HelmRepository
+        name: hashicorp-charts
+        namespace: flux-system
+      interval: 1m
+  values:
+    global:
+      datacenter: yorkhaus
+    ui:
+      service:
+        type: "LoadBalancer"
+    syncCatalog:
+      enabled: true
+    dns:
+      enabled: true
+      type: clusterIP
+    metrics:
+      enabled: true
+      agentMetricsRetentionTime: 20m
+    server:
+      enabled: true
+      replicas: 1
+      bootstrapExpect: 1
+    connectInject:
+      enabled: true
+    storage: 10Gi
+    storageClass: config-data
